@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+void calc_hexa(float l, float *area, float *perimetro){
+
+	*perimetro = 6 * l;
+	printf("Perimetro: %f\n", *perimetro);
+	
+	*area = (3 * pow(l,2) * sqrt(3))/2;
+	printf("Area: %f\n",*area);
+	
+}
+
+int main(){
+	float lado,area, perimetro;
+	while(true){
+	
+	printf("Insira o valor do lado: ");
+	scanf("%f",&lado);	
+	fflush(stdin);
+		if(lado < 0) break;	
+	calc_hexa(lado, &area, &perimetro);
+
+	}
+	return 0;
+}
