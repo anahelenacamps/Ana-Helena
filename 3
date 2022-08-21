@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+char str[100];
+char *p;
+int tam;
+
+void trocavogais(char tmp[100]){
+	for(int i=0;i<tam;i++){
+		p = &tmp[i];
+		if(*p == 97){
+			tmp[i] = 117;
+		}
+		else
+			if(*p == 101){
+				tmp[i] = 111;	
+			}
+			else
+				if(*p == 105 ){
+					tmp[i] = 117;
+				}
+				else 
+					if(*p == 111){
+						tmp[i] = 97;	
+					}	
+					else 
+						if(*p == 117){
+							tmp[i] = 101;
+						}			
+	}	
+}
+
+
+int main(){
+	printf("Digite uma frase: ");
+	gets(str);
+	tam = strlen(str);
+	trocavogais(str);
+	
+	printf("%s",str);
+}
