@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int** criamatriz(int m, int n){
+	int **mat;
+	int j, i;
+	mat = malloc(m * sizeof(int*));
+	
+	for(i=0; i<m;i++)
+		mat[i] = malloc(n * sizeof(int));
+		
+	for(i=0;i<m;i++){
+		for(j = 0; j < n; j++){
+			*(*(mat + m)+n) = rand() % 100;
+		}
+	}
+	return(mat);
+}
+
+void liberar_memoria(int **p, int m){
+	int i;
+	for(i=0;i < m;i++){
+		free(p+i);
+	}
+}
+
+
+int main(void){
+	int m, n;
+	int **matriz;
+	printf("Entre com a quantidade de linhas: ");
+	scanf("%i", &m);
+	printf("\nEntre com a quantidade de colunas: ");
+	scanf("%i", &n);
+	
+	
+	matriz = criamatriz(m,n);
+	liberar_memoria(matriz, m);
+
+	
+}
