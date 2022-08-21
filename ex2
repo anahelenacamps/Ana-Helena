@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int* criar_vetor(int n){
+	int *p;
+	p = malloc(n * sizeof(int));
+	return p;
+}
+
+void imprimir(int *vetor, int tam){
+	int j;
+	for(j = 0;j < tam;j++){
+		printf("%i ",*(vetor + j));
+	}
+	printf("\n");
+}
+
+void liberar_memoria(int *p){
+	free(p);
+}
+
+
+int main(void){
+	
+	int *vet, i ,n;
+	
+	printf("Insira o tamanho do vetor: ");
+	scanf("%i", &n);
+	fflush(stdin);
+	
+	srand(time(NULL));
+	
+	vet = criar_vetor(n);
+	
+	//Ler o Vetor
+	for(i = 0;i < n;i++){
+		printf("Insira o %i termo do vetor: ",i + 1);
+		scanf("%i",vet + i);
+		fflush(stdin);
+	}
+		
+	
+	imprimir(vet, n);
+	liberar_memoria(vet);
+
+
+	return 0;
+}
