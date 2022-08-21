@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <Windows.h>
+int n, i;
+int *v;
+
+read(int *v){
+	for(i=0; i<n; i++){
+		printf("Entre com o %i valor do vetor: ", i+1);
+		scanf("%d", v+i);
+	}
+}
+
+void liberar_memoria(int *p){
+	free(p);
+}
+
+int main(void){
+		
+	printf("Entre com o tamanho do vetor:");
+	scanf("%i", &n);
+	fflush(stdin);
+	
+	v = malloc(n * sizeof(int));
+	
+	read(v);
+	
+	system("cls");
+	
+	for(i=0; i<n; i++){d
+		printf("%d ", *(v+i));
+	}
+	
+	liberar_memoria(v);
+}
