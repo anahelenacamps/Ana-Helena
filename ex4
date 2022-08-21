@@ -1,0 +1,44 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+typedef struct{
+	char nome[100];
+	char data_nascimento[11];
+	char cpf[14];
+	
+}Pessoa;
+
+void preencher(Pessoa *p){
+	printf("Insira o Nome: ");
+	gets(p -> nome);
+	fflush(stdin);
+	printf("Insira data de Nascimento: ");
+	gets(p -> data_nascimento);
+	fflush(stdin);
+	printf("Insira  o CPF: ");
+	gets(p -> cpf);
+	fflush(stdin);
+	
+	
+}
+
+void imprimir(Pessoa *p){
+	printf("Nome: %s\n",p -> nome);
+	printf("Data de Nascimento: %s\n", p -> data_nascimento);
+	printf("CPF: %s\n", p -> cpf);
+}
+
+
+int main(void){
+	
+	Pessoa *pessoa;
+	pessoa = malloc(sizeof(Pessoa));
+	
+	preencher(pessoa);
+	
+	imprimir(pessoa);
+	
+	return 0;
+}
